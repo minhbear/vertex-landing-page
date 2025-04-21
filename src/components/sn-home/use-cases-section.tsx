@@ -83,7 +83,7 @@ export default function UseCasesSection() {
       icon: <Globe className="h-6 w-6" />,
       iconBgColor: "bg-primary-900/30",
       iconColor: "text-primary-400",
-      title: "dApp Developers",
+      title: "DApp Developers",
       description: "Build fast, reliable frontends for DeFi, NFT, and DAO applications with custom indexers that meet your exact data needs.",
       benefits: [
         "Create real-time data feeds for trading interfaces",
