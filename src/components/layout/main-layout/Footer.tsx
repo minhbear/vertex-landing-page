@@ -26,7 +26,7 @@ export default function Footer() {
                   <line x1="12" y1="8.5" x2="22" y2="15.5"></line>
                 </svg>
               </div>
-              <span className="font-bold text-xl">Sol Index Protocol</span>
+              <span className="font-bold text-xl">Vertex</span>
             </div>
             <p className="text-muted-foreground mb-4">
               Modular Indexing & Query Layer for Solana
@@ -194,7 +194,7 @@ export default function Footer() {
         <div className="border-t border-border pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <p className="text-muted-foreground text-sm">
-              &copy; {new Date().getFullYear()} Sol Index Protocol. All rights
+              &copy; {new Date().getFullYear()} Vertex. All rights
               reserved.
             </p>
             <div className="flex space-x-6 mt-4 md:mt-0">

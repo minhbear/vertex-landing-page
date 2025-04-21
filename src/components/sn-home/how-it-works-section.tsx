@@ -1,59 +1,50 @@
 import { motion } from "framer-motion";
 import CodeBlock from "@/components/ui/code-block";
 
-const howItWorksCode = `// Example of a complete indexer definition
-import { createIndexer, defineSchema } from '@solindex/core';
-import { PublicKey } from '@solana/web3.js';
+const howItWorksCode = `
+const campaignStatusSchema = utils.common.borsh.rustEnum([
+  utils.common.borsh.struct([], "Upcoming"),
+  utils.common.borsh.struct([], "Ongoing"),
+  utils.common.borsh.struct([], "Completed"),
+  utils.common.borsh.struct([], "Cancelled"),
+]);
 
-// Define the database schema
-const swapSchema = defineSchema({
-  swaps: {
-    id: 'string', // primary key
-    amountIn: 'bigint',
-    amountOut: 'bigint',
-    tokenInMint: 'string',
-    tokenOutMint: 'string',
-    user: 'string',
-    timestamp: 'timestamp',
-    txSignature: 'string',
-    slot: 'number'
-  }
-});
+const borshCampaignDataSchema = utils.common.borsh.struct([
+  utils.common.borsh.str("name"),
+  utils.common.borsh.str("ctaLink"),
+  utils.common.borsh.str("logo"),
+  utils.common.borsh.u64("startDate"),
+  utils.common.borsh.u64("endDate"),
+  utils.common.borsh.u64("budget"),
+  utils.common.borsh.u64("ratePerClick"),
+  utils.common.borsh.u64("clicks"),
+  utils.common.borsh.u64("remainingBudget"),
+  campaignStatusSchema.replicate("status"),
+]);
 
-// Create the indexer
-const dexIndexer = createIndexer({
-  name: 'dex-swaps',
-  programId: 'DEX1111111111111111111111111111111111111111',
-  schema: swapSchema,
-  startSlot: 200000000,  // Start indexing from specific slot
-  
-  async process(event, context) {
-    if (event.name !== 'swap') return;
-    
-    const {
-      tokenInAmount,
-      tokenOutAmount,
-      tokenInMint,
-      tokenOutMint
-    } = event.data;
-    
-    const user = event.accounts[0];
-    
-    await context.store.insert('swaps', {
-      id: event.signature + '-' + event.logIndex,
-      amountIn: tokenInAmount,
-      amountOut: tokenOutAmount,
-      tokenInMint: tokenInMint.toString(),
-      tokenOutMint: tokenOutMint.toString(),
-      user: user.toString(),
-      timestamp: event.blockTime 
-        ? new Date(event.blockTime * 1000) 
-        : new Date(),
-      txSignature: event.signature,
-      slot: event.slot
-    });
+const borshCampaignSchema = utils.common.borsh.struct([
+  utils.common.borsh.u64("campaignId"),
+  utils.common.borsh.publicKey("advertiser"),
+  borshCampaignDataSchema.replicate("campaignData"),
+]);
+
+function execute(context) {
+  const pdaBuffer = context.pdaBuffer;
+  const bufferWithDiscriminator = pdaBuffer.subarray(8);
+  const parser = borshCampaignSchema.decode(bufferWithDiscriminator);
+
+  return {
+    action: 'INSERT',
+    data: {
+      campaign_id: Number(parser.campaignId),
+      advertiser: parser.advertiser.toString(),
+      start_date: new Date(Number(parser.campaignData.startDate) * 1000),
+      end_date: new Date(Number(parser.campaignData.endDate) * 1000),
+      budget: Number(parser.campaignData.budget),
+      rate_per_click: Number(parser.campaignData.ratePerClick),
+    }
   }
-});`;
+}`;
 
 export default function HowItWorksSection() {
   return (
@@ -86,7 +77,7 @@ export default function HowItWorksSection() {
                 2
               </div>
             </div>
-            <h3 className="text-xl font-semibold mb-2 text-center">Upload IDL or Schema</h3>
+            <h3 className="text-xl font-semibold mb-2 text-center">Upload IDL (Optional)</h3>
             <p className="text-muted-foreground text-center">Upload your program's IDL to auto-generate schemas or define custom data structures.</p>
             
             {/* Connector */}

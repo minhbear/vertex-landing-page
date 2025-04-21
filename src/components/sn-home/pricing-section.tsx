@@ -107,41 +107,41 @@ export default function PricingSection() {
       buttonVariant: "outline" as const,
       delay: 0
     },
-    {
-      name: "Pro",
-      description: "For teams building serious dApps",
-      price: "$99",
-      unit: "month",
-      features: [
-        { text: "10 indexers", available: true },
-        { text: "2M API calls per month", available: true },
-        { text: "20GB storage", available: true },
-        { text: "Email support", available: true },
-        { text: "Custom domains", available: true },
-        { text: "Dedicated infrastructure", available: false },
-      ],
-      buttonText: "Get Started",
-      buttonVariant: "default" as const,
-      popular: true,
-      delay: 1
-    },
-    {
-      name: "Enterprise",
-      description: "For high-traffic dApps and enterprises",
-      price: "Custom",
-      unit: "month",
-      features: [
-        { text: "Unlimited indexers", available: true },
-        { text: "Custom API call limits", available: true },
-        { text: "Unlimited storage", available: true },
-        { text: "Priority support with SLA", available: true },
-        { text: "Custom domains", available: true },
-        { text: "Dedicated infrastructure", available: true },
-      ],
-      buttonText: "Contact Sales",
-      buttonVariant: "outline" as const,
-      delay: 2
-    }
+    // {
+    //   name: "Pro",
+    //   description: "For teams building serious dApps",
+    //   price: "$99",
+    //   unit: "month",
+    //   features: [
+    //     { text: "10 indexers", available: true },
+    //     { text: "2M API calls per month", available: true },
+    //     { text: "20GB storage", available: true },
+    //     { text: "Email support", available: true },
+    //     { text: "Custom domains", available: true },
+    //     { text: "Dedicated infrastructure", available: false },
+    //   ],
+    //   buttonText: "Get Started",
+    //   buttonVariant: "default" as const,
+    //   popular: true,
+    //   delay: 1
+    // },
+    // {
+    //   name: "Enterprise",
+    //   description: "For high-traffic dApps and enterprises",
+    //   price: "Custom",
+    //   unit: "month",
+    //   features: [
+    //     { text: "Unlimited indexers", available: true },
+    //     { text: "Custom API call limits", available: true },
+    //     { text: "Unlimited storage", available: true },
+    //     { text: "Priority support with SLA", available: true },
+    //     { text: "Custom domains", available: true },
+    //     { text: "Dedicated infrastructure", available: true },
+    //   ],
+    //   buttonText: "Contact Sales",
+    //   buttonVariant: "outline" as const,
+    //   delay: 2
+    // }
   ];
 
   return (

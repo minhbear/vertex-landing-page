@@ -79,7 +79,7 @@ export default function EarlyAccessSection() {
         <div className="max-w-3xl mx-auto text-center mb-12">
           <h2 className="text-3xl font-bold mb-4">Get Early Access</h2>
           <p className="text-lg text-muted-foreground">
-            Join the waitlist for early access to Sol Index Protocol, be the
+            Join the waitlist for early access to Vertex, be the
             first to experience the future of Solana data indexing.
           </p>
         </div>
@@ -135,7 +135,7 @@ export default function EarlyAccessSection() {
                 render={({ field }) => (
                   <FormItem>
                     <FormLabel>
-                      How do you plan to use Sol Index Protocol?
+                      How do you plan to use Vertex?
                     </FormLabel>
                     <FormControl>
                       <Textarea

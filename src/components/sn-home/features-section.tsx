@@ -77,21 +77,13 @@ export default function FeaturesSection() {
       title: "Modular Indexers",
       description: "Create multiple indexers per project, each with custom triggers and specific focus areas to efficiently process on-chain data.",
       tags: ["Custom Triggers", "Program-specific", "Composable"],
-      tagColor: "bg-primary-900/30 text-primary-300",
+      tagColor: "bg-blue-900/30 text-blue-300",
       delay: 0
     },
     {
       icon: <Code2 className="h-10 w-10" />,
-      title: "Scriptable Pipelines",
-      description: "Write scripts in TypeScript, Rust, or Python to define exactly how your data is collected, transformed, and stored.",
-      tags: ["Transform Data", "Custom Filters", "Data Enrichment"],
-      tagColor: "bg-blue-900/30 text-blue-300",
-      delay: 1
-    },
-    {
-      icon: <ShieldCheck className="h-10 w-10" />,
-      title: "Smart IDL Handling",
-      description: "Upload your IDLs to automatically generate event listeners and strongly-typed schemas for your program's events.",
+      title: "Trigger Index Data Onchain",
+      description: "Define your rule how to parse Data and store data in your storage you had defined. You can use IDL or write your own parser with PDA you want to index data",
       tags: ["Auto-generation", "Type Safety", "Event Parsing"],
       tagColor: "bg-green-500/10 text-green-500",
       delay: 2
@@ -99,9 +91,9 @@ export default function FeaturesSection() {
     {
       icon: <Zap className="h-10 w-10" />,
       title: "Instant API",
-      description: "Auto-generate GraphQL and REST endpoints from your indexed data, with built-in filtering, pagination, and subscription.",
-      tags: ["GraphQL", "REST", "Webhooks"],
-      tagColor: "bg-primary-900/30 text-primary-300",
+      description: "Give you API to access your indexed data. You can use REST API or webhooks to get data.",
+      tags: ["REST", "Webhooks"],
+      tagColor: "bg-blue-900/30 text-blue-300",
       delay: 3
     },
     {
@@ -127,7 +119,7 @@ export default function FeaturesSection() {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-3xl mx-auto text-center mb-16">
           <h2 className="text-3xl font-bold mb-4">The Developer-First Indexing Solution</h2>
-          <p className="text-lg text-muted-foreground">Sol Index Protocol gives you the flexibility and power to access, transform, and stream on-chain data exactly how you need it.</p>
+          <p className="text-lg text-muted-foreground">Vertex gives you the flexibility and power to access, transform, and stream on-chain data exactly how you need it.</p>
         </div>
 
         <motion.div 

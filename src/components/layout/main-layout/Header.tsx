@@ -81,7 +81,7 @@ export default function Header() {
               className="font-bold text-xl tracking-tight cursor-pointer"
               onClick={() => router.push("/")}
             >
-              Sol Index Protocol
+              Vertex
             </div>
           </div>
 

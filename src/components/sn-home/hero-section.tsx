@@ -1,46 +1,13 @@
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
-import CodeBlock from "@/components/ui/code-block";
 import { ArrowRight, Wand2 } from "lucide-react";
-
-const heroCodeExample = `// Define a custom indexer for tracking NFT mints
-import { createIndexer, EventType } from '@solindex/core';
-import { NFT_PROGRAM_ID } from './constants';
-
-const nftIndexer = createIndexer({
-  name: 'nft-mint-tracker',
-  programId: NFT_PROGRAM_ID,
-  startSlot: 'latest',
-  filters: [{ eventType: EventType.INSTRUCTION, name: 'mintNFT' }],
-  async process(event, context) {
-    const { accounts, data } = event;
-    
-    // Extract relevant data from the transaction
-    const mintAddress = accounts[0];
-    const metadata = await context.fetchMetadata(mintAddress);
-    
-    // Store the indexed data
-    await context.store.insert('nft_mints', {
-      mint_address: mintAddress,
-      owner: accounts[1],
-      name: metadata.name,
-      uri: metadata.uri,
-      timestamp: new Date().toISOString()
-    });
-  }
-});
-
-// Start the indexer
-nftIndexer.start();`;
 
 export default function HeroSection() {
   return (
     <section
       id="hero"
-      className="relative overflow-hidden py-16 md:py-24 border-b border-border"
+      className="relative overflow-hidden py-16 md:py-24 border-b border-border h-screen flex justify-center items-center"
     >
-      {/* Background gradient and pattern */}
-
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="max-w-4xl mx-auto text-center mb-12">
           <motion.h1
@@ -154,19 +121,6 @@ export default function HeroSection() {
             </div>
           </motion.div>
         </div>
-
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 1 }}
-          className="max-w-4xl mx-auto"
-        >
-          <CodeBlock
-            code={heroCodeExample}
-            fileName="index.ts"
-            language="typescript"
-          />
-        </motion.div>
       </div>
     </section>
   );
