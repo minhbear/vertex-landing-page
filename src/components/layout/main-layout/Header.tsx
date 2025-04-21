@@ -10,6 +10,8 @@ import {
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Menu } from "lucide-react";
 import { twJoin } from "tailwind-merge";
+import Image from "next/image";
+import { ImageAssets } from "public";
 
 type NavItem = {
   label: string;
@@ -60,22 +62,11 @@ export default function Header() {
           {/* Logo */}
           <div className="flex items-center">
             <div className="text-primary mr-2">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="h-8 w-8"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              >
-                <polygon points="12 2 22 8.5 22 15.5 12 22 2 15.5 2 8.5 12 2"></polygon>
-                <line x1="12" y1="22" x2="12" y2="15.5"></line>
-                <polyline points="22 8.5 12 15.5 2 8.5"></polyline>
-                <line x1="2" y1="15.5" x2="12" y2="8.5"></line>
-                <line x1="12" y1="8.5" x2="22" y2="15.5"></line>
-              </svg>
+              <Image
+                src={ImageAssets.LogoImage}
+                alt="logo image"
+                className="w-6 h-6"
+              />
             </div>
             <div
               className="font-bold text-xl tracking-tight cursor-pointer"

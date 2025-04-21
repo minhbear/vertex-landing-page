@@ -127,14 +127,14 @@ const Home = () => {
             <PricingSection />
           </motion.div>
 
-          <motion.div
+          {/* <motion.div
             ref={earlyAccessRef}
             initial="hidden"
             animate={earlyAccessControls}
             variants={fadeInUpVariant}
           >
             <EarlyAccessSection />
-          </motion.div>
+          </motion.div> */}
         </main>
       </div>
       <Toaster />

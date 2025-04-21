@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
 import { ArrowRight, Wand2 } from "lucide-react";
+import Image from "next/image";
 
 export default function HeroSection() {
   return (

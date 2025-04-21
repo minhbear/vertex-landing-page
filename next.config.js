@@ -6,9 +6,6 @@ const nextConfig = {
     externalResolver: true,
   },
   env: {
-    NETWORK_MODE: process.env.NETWORK_MODE || "",
-    RPC_URL: process.env.RPC_URL || "",
-    SERVICE_URL: process.env.SERVICE_URL || "",
   },
   async headers() {
     return [

@@ -1,9 +1,9 @@
-import apisauce, { ApiResponse, ApisauceConfig } from 'apisauce';
-import { ApiConstant, AppConstant } from '@/const';
-import Cookie from 'js-cookie';
+import apisauce, { ApiResponse, ApisauceConfig } from "apisauce";
+import { ApiConstant, AppConstant } from "@/const";
+import Cookie from "js-cookie";
 
 const DEFAULT_CONFIG: ApisauceConfig = {
-  baseURL: process.env.DAPP_SERVICE_URL || '',
+  baseURL: process.env.NEXT_PUBLIC_DAPP_SERVICE_URL || "",
   headers: { ...ApiConstant.HEADER_DEFAULT },
   timeout: ApiConstant.TIMEOUT,
 };
@@ -23,7 +23,7 @@ Api.addResponseTransform(handleErrorRequest);
 
 const createInstance = (token?: string) => {
   const newToken = token || Cookie.get(AppConstant.KEY_TOKEN);
-  newToken && Api.setHeader('Authorization', `Bearer ${newToken}`);
+  newToken && Api.setHeader("Authorization", `Bearer ${newToken}`);
 
   return Api;
 };
