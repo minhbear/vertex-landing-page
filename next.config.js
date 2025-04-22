@@ -1,12 +1,10 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  output: "export",
-  reactStrictMode: false,
-  api: {
-    externalResolver: true,
+  output: 'export',
+  images: {
+    unoptimized: true,
   },
-  env: {
-  },
+  env: {}
 };
 
 module.exports = nextConfig;
