@@ -126,7 +126,7 @@ export default function Header() {
             size="lg"
             className="group"
             onClick={() => {
-              window.open(process.env.NEXT_PUBLIC_DAAP_URL, "_blank");
+              window.open("https://app.vertex-sol.xyz/", "_blank");
             }}
           >
             Create Indexer
