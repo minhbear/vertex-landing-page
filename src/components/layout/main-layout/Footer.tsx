@@ -33,24 +33,24 @@ export default function Footer() {
             </p>
             <div className="flex space-x-4">
               <a
-                href="#"
+                href="https://x.com/vertex__sol"
                 className="text-muted-foreground hover:text-foreground transition"
               >
                 <span className="sr-only">Twitter</span>
                 <Twitter className="h-6 w-6" />
               </a>
               <a
-                href="#"
+                href="https://github.com/vertex-solana"
                 className="text-muted-foreground hover:text-foreground transition"
               >
                 <span className="sr-only">GitHub</span>
                 <Github className="h-6 w-6" />
               </a>
               <a
-                href="#"
+                href="https://t.me/+eYGNHuF2aTJkYWJl"
                 className="text-muted-foreground hover:text-foreground transition"
               >
-                <span className="sr-only">MessageCircleCode</span>
+                <span className="sr-only">Telegram</span>
                 <MessageCircleCode className="h-6 w-6" />
               </a>
             </div>
@@ -194,8 +194,7 @@ export default function Footer() {
         <div className="border-t border-border pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <p className="text-muted-foreground text-sm">
-              &copy; {new Date().getFullYear()} Vertex. All rights
-              reserved.
+              &copy; {new Date().getFullYear()} Vertex. All rights reserved.
             </p>
             <div className="flex space-x-6 mt-4 md:mt-0">
               <a
