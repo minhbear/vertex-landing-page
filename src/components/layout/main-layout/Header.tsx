@@ -26,7 +26,7 @@ const navigationItems: NavItem[] = [
   { label: "Pricing", href: "#pricing" },
   {
     label: "Docs",
-    href: "https://docs.solindexprotocol.dev",
+    href: "https://minhbear.notion.site/Vertex-Indexing-Documentation-1e2396a5741980ada1aff092fa16637c",
     isExternal: true,
   },
 ];
@@ -84,7 +84,7 @@ export default function Header() {
                   <a
                     key={item.label}
                     href={item.href}
-                    target="_blank"
+                    target={item.href}
                     rel="noopener noreferrer"
                     className="text-muted-foreground hover:text-foreground transition"
                   >
